@@ -20,6 +20,7 @@
     "homepage": "https://github.com/datlt2306/web503#readme",
     "dependencies": {
         "bcryptjs": "^2.4.3",
+        "bootstrap": "^5.3.0",
         "concurrently": "^7.6.0",
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
