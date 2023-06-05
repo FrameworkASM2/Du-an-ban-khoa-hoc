@@ -1,5 +1,6 @@
 import products from "../Models/Products"
 import Category from "../Models/Category";
+import { productSchema } from "../Schemas/schema";
 
 export const getAllProducts = async (req, res) => {
     const { _sort = "createAt", _order = "asc", _limit = 20, _page = 1 } = req.query
@@ -21,7 +22,7 @@ export const getAllProducts = async (req, res) => {
         return res.status(200).json(data)
     } catch (error) {
         return res.json({
-            message: error.message()
+            message: error.message
         })
     }
 }
@@ -41,6 +42,13 @@ export const removeProducts = async (req, res) => {
 export const createProducts = async (req, res) => {
     try {
         const body = req.body
+        const { error } = productSchema.validate(body)
+        if (error) {
+            const errors = error.details.map((errorItem) => errorItem.message)
+            return res.status(400).json({
+                message: errors
+            })
+        }
         const product = await products.create(body)
         await Category.findByIdAndUpdate(product.categoryId, {
             $addToSet: {
@@ -62,8 +70,15 @@ export const createProducts = async (req, res) => {
 export const updateProducts = async (req, res) => {
     try {
         const body = req.body
-        const id = req.param.id
-        const product = await products.findByIdAndUpdate({ _id: id }, body, { new: true })
+        const id = req.params.id
+        const { error } = productSchema.validate(body)
+        if (error) {
+            const errors = error.details.map((errorItem) => errorItem.message)
+            return res.status(400).json({
+                message: errors
+            })
+        }
+        const product = await products.findOneAndUpdate({ _id: id }, body, { new: true })
         if (!product) {
             return res.status(400).json({
                 message: "Cập nhật sản phẩm thất bạn "
@@ -74,7 +89,7 @@ export const updateProducts = async (req, res) => {
         })
     } catch (error) {
         return res.status(400).json({
-            message: error
+            message: error.message
 
 
         })
