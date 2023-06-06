@@ -1,3 +1,17 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-4">
+            <ul>
+                <li><a routerLink="dashboard">dashboard</a></li>
+                <li><a routerLink="course">products</a></li>
+            </ul>
+        </div>
+        <div class="col-8">
+            <router-outlet/>
+            <main>Noi dung chinh</main>
+        </div>
+    </div>
+</div> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +30,21 @@
 			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
-				<a href="course">
+				<a routerLink="course">
                     <i class='bx bxs-inbox icon' ></i> Product Management <i class='bx bx-chevron-right icon-right' ></i>
                 </a>
 				<ul class="side-dropdown">
-					<li><a href="course">Course</a></li>
-					<li><a href="add">Add Course</a></li>
+					<li><a routerLink="course">Course</a></li>
+					<li><a routerLink="add">Add Course</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-widget icon' ></i> Manage categories <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Basic</a></li>
+					<li><a href="#">Select</a></li>
+					<li><a href="#">Checkbox</a></li>
+					<li><a href="#">Radio</a></li>
 				</ul>
 			</li>
 		</ul>
