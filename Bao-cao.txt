@@ -1,0 +1,33 @@
+- Những vấn đề gặp phải:
++ Có bạn không làm đúng hạn, giục mới chịu làm
+- Giải pháp: 
+giục mà vẫn không chịu làm thì assign cho các bạn khác
+
++ Lúc đầu thì vẫn chưa hiểu về github nên thành viên trong nhóm khá chậm trong việc đẩy code
++ Các đầu việc thì vẫn phải chờ nhau làm xong 
++Chưa biết sử dụng mongoo clound
++đã commit lên github nhưng không tự động commit lại và k tự động sửa task
++Trên jira sửa xong nhưng k commit lại
+- Nguyên nhân:
+- Giải pháp: 
+
+
+-Những công việc đã hoàn thienj trong tuần trước:
++Data type Models
++Check Middleware
++Controllers All
++Router All
++Schema validate
+
+-Kế hoạch trong tuần tới:
++Xây dựng giao diện(Home Page,Header,Footer,)
++Xây dựng giao diện sản phẩm
++Xây dựng giao diện chi tiết sản phẩm
++Danh mục
++Upload Images
++Signup,signin
+báo cáo lại chi tiết
+Thời gian hoàn thành ntn và trong bao lâu
+tìm hiểu git rebase, git merge
+khi nào thì sử dung và tại s
+git cherry-pick, git start
