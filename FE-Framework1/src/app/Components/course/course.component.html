@@ -1,0 +1,25 @@
+<p>product-list works!</p>
+<div class="container-admin">
+    {{title}}
+    <table class="table table-border">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="course && course.length">
+            <tr *ngFor="let product of course; index as i">
+                <td>{{i + 1}}</td>
+                <td>{{product.Name}}</td>
+                <td>{{product.Price}}</td>
+                <td><img src="{{product.Image}}" alt=""></td>
+                <td><button class="btn btn-outline-danger" (click)="Remove(product._id)">Xoa</button></td>
+                <td><button class="btn btn-outline-danger" routerLink="{{product._id}}/edit">Sua</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

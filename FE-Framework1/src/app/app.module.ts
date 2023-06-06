@@ -8,14 +8,16 @@ import { AdminLayoutComponent } from './Layouts/admin-layout/admin-layout.compon
 import { BaseLayoutComponent } from './Layouts/base-layout/base-layout.component';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms'
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { CourseComponent } from './Components/course/course.component'
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AdminCourseComponent,
     AdminLayoutComponent,
-    BaseLayoutComponent
+    BaseLayoutComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
