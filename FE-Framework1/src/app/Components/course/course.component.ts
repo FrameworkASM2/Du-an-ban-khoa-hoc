@@ -11,8 +11,8 @@ export class CourseComponent {
   course: ICourse[]=[];
   
   title= "Quản lí sản phẩm"
-  constructor(private courseervice: CourseService) {
-    this.courseervice.getAllCourse().subscribe(data => {
+  constructor(private courservice: CourseService) {
+    this.courservice.getAllCourse().subscribe(data => {
       this.course = data
     },
       error => {
@@ -20,7 +20,9 @@ export class CourseComponent {
       })
   }
   Remove(id: any) {
-    this.courseervice.deleteCourse(id).subscribe(() => {
+    confirm("Bạn có chắc muốn xóa khóa khọc này?")
+    this.courservice.deleteCourse(id).subscribe(() => {
+      
       this.course = this.course.filter(item => item._id != id)
     })
   }
