@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>{{title}}</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên danh mục</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="categories && categories.length">
+      <tr *ngFor="let cate of categories;index as i">
+        <td>{{i+1}}</td>
+        <td>{{cate.Name}}</td>
+        <td>
+          <button class="btn btn-range" (click)="Remove(cate._id)">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

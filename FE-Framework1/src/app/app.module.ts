@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Pages/Admin/dashboard/dashboard.component';
 import { AdminCourseComponent } from './Pages/Admin/admin-course/admin-course.component';
 import { AdminLayoutComponent } from './Layouts/admin-layout/admin-layout.component';
 import { BaseLayoutComponent } from './Layouts/base-layout/base-layout.component';
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule} from '@angular/forms'
-import {HttpClientModule} from '@angular/common/http';
-import { CourseComponent } from './Components/course/course.component'
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+import { CourseComponent } from './Components/course/course.component';
+import { AdminCategoryComponent } from './Pages/Admin/Admin-Category/admin-category/admin-category.component';
+import { AddCategoryComponent } from './Pages/Admin/Category/Add-category/add-category/add-category.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,9 @@ import { CourseComponent } from './Components/course/course.component'
     AdminCourseComponent,
     AdminLayoutComponent,
     BaseLayoutComponent,
-    CourseComponent
+    CourseComponent,
+    AdminCategoryComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,
