@@ -1,0 +1,32 @@
+<div class="container">
+    <form (ngSubmit)="onHandleSubmit()" class="form">
+        <div class="mb-3">
+            <label for="">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="course.Name" name="Name">
+        </div>
+        <div class="mb-3">
+            <label for="">Price</label>
+            <input type="text" class="form-control" [(ngModel)]="course.Price" name="Price">
+        </div>
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Image</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple [(ngModel)]="course.Image" name="Image">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="course.Description" name="Description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="inputState" class="form-label">Category</label>
+            <select id="inputState" class="form-select" [(ngModel)]="course.categoryId" name="categoryId" *ngIf="categories && categories.length">
+                <option selected *ngFor="let item of categories; index as i" value="{{item._id}}">{{item.Name}}</option>
+                <!-- <option>...</option> -->
+            </select>
+        </div>
+
+       
+
+        {{course | json}}
+        <button class="btn btn-primary">Add Course</button>
+    </form>
+</div>
