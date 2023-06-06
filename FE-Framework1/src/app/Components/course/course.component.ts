@@ -8,7 +8,8 @@ import { CourseService } from 'src/app/Services/Course/course.service';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent {
-  course: ICourse[]=[]
+  course: ICourse[]=[];
+  
   title= "Quản lí sản phẩm"
   constructor(private courseervice: CourseService) {
     this.courseervice.getAllCourse().subscribe(data => {
