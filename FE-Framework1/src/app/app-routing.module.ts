@@ -4,8 +4,11 @@ import { AdminLayoutComponent } from './Layouts/admin-layout/admin-layout.compon
 import { DashboardComponent } from './Pages/Admin/dashboard/dashboard.component';
 import { CourseComponent } from './Components/course/course.component';
 import { AdminCategoryComponent } from './Pages/Admin/Admin-Category/admin-category/admin-category.component';
+import { AddCategoryComponent } from "./Pages/Admin/Category/Add-category/add-category/add-category.component";
 import { AddCourseComponent } from './Pages/add-course/add-course.component';
 import { UpdateCourseComponent } from './Pages/update-course/update-course.component';
+import { EditCategoryComponent } from "./Pages/Admin/Category/edit-category/edit-category.component";
+
 
 const routes: Routes = [
   {
@@ -16,7 +19,9 @@ const routes: Routes = [
       { path: "course/add", component: AddCourseComponent },
       { path: "course/:id/edit", component: UpdateCourseComponent },
       //=== Category ===
-      { path: "category", component: AdminCategoryComponent }
+      { path: "category", component: AdminCategoryComponent },
+      { path: "category/add", component: AddCategoryComponent },
+      { path: "category/edit/:id", component:EditCategoryComponent }
     ]
   },
 ]
