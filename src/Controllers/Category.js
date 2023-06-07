@@ -38,7 +38,7 @@ export const create = async (req, res) => {
         if (error) {
             const errors = error.details.map((errorItem) => errorItem.message);
             return res.sratus(400).json({
-                message: error,
+                message: errors,
             });
         }
         const data = await Category.create(body);
