@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core"
+import { RouterModule, Routes } from "@angular/router"
 import { AdminLayoutComponent } from './Layouts/admin-layout/admin-layout.component';
 import { DashboardComponent } from './Pages/Admin/dashboard/dashboard.component';
 import { CourseComponent } from './Components/course/course.component';
