@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class CategoryService {
 
   constructor(private http: HttpClient) { }
+  
   getCategory(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(`http://localhost:3000/category`)
   }

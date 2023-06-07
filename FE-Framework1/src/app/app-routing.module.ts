@@ -15,14 +15,15 @@ const routes: Routes = [
     path: 'admin', component: AdminLayoutComponent, children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
+//       === Course ===
       { path: "course", component: CourseComponent },
       { path: "course/add", component: AddCourseComponent },
       { path: "course/:id/edit", component: UpdateCourseComponent },
+      
       //=== Category ===
       { path: "category", component: AdminCategoryComponent },
       { path: "category/add", component: AddCategoryComponent },
       { path: "category/edit/:id", component:EditCategoryComponent }
-    ]
   },
 ]
 
