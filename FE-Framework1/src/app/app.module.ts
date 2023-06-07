@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CourseComponent } from './Components/course/course.component';
 import { AdminCategoryComponent } from './Pages/Admin/Admin-Category/admin-category/admin-category.component';
 import { AddCategoryComponent } from './Pages/Admin/Category/Add-category/add-category/add-category.component'
+import { AddCourseComponent } from './Pages/add-course/add-course.component';
+import { UpdateCourseComponent } from './Pages/update-course/update-course.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { AddCategoryComponent } from './Pages/Admin/Category/Add-category/add-ca
     BaseLayoutComponent,
     CourseComponent,
     AdminCategoryComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    AddCourseComponent,
+    UpdateCourseComponent
   ],
   imports: [
     BrowserModule,
