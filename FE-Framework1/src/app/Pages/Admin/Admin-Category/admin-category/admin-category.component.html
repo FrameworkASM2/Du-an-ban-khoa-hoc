@@ -1,5 +1,8 @@
 <div class="container">
+  <br />
   <h1>{{title}}</h1>
+  <br />
+  <a routerLink="add">Thêm sản phẩm</a>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -13,7 +16,7 @@
         <td>{{i+1}}</td>
         <td>{{cate.Name}}</td>
         <td>
-          <button class="btn btn-range" (click)="Remove(cate._id)">Xóa</button>
+          <!-- <button class="btn btn-primary" (click)="Remove(cate._id)">Xóa</button> -->
         </td>
       </tr>
     </tbody>
