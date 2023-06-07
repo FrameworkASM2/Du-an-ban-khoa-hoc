@@ -1,32 +1,24 @@
 {
   "category": [
     {
-      "id": 1,
-      "Name": "Intelligent Cotton Table"
-    },
-    {
-      "id": 2,
-      "Name": "Intelligent Cotton Table"
-    },
-    {
-      "id": 3,
-      "Name": "Intelligent Cotton Table"
-    },
-    {
-      "id": 4,
-      "Name": "Intelligent Cotton Table"
-    },
-    {
-      "id": 5,
-      "Name": "Intelligent Cotton Table"
-    },
-    {
       "Name": "Dien thoai di dong",
       "id": 6
     },
     {
       "Name": "Dien thoai di dong",
       "id": 7
+    },
+    {
+      "Name": "Áo Polo",
+      "id": 8
+    },
+    {
+      "Name": "Nước hoa 3 update",
+      "id": 9
+    },
+    {
+      "Name": "Nước hoa 3 update",
+      "id": 10
     }
   ]
 }

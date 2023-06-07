@@ -12,10 +12,13 @@ export class CategoryService {
   getCategory(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(`http://localhost:3000/category`)
   }
-  // removeCategory(id: number | string): Observable<ICategory> {
-  //   return this.http.delete<ICategory>(`http://localhost:3000/category/${id}`)
-  // }
+  removeCategory(id: number | string): Observable<ICategory> {
+    return this.http.delete<ICategory>(`http://localhost:3000/category/${id}`)
+  }
   addCategory(category: ICategory): Observable<ICategory> {
     return this.http.post<ICategory>(`http://localhost:3000/category`, category)
   }
+
+
+
 }

@@ -15,6 +15,7 @@ describe('AddCategoryComponent', () => {
     fixture.detectChanges();
   });
 
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

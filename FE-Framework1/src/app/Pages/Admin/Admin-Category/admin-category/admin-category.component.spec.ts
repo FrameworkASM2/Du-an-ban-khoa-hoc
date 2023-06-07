@@ -13,6 +13,9 @@ describe('AdminCategoryComponent', () => {
     fixture = TestBed.createComponent(AdminCategoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+
+
   });
 
   it('should create', () => {
