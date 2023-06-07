@@ -1,5 +1,6 @@
 <div class="container-admin">
    <h1>{{title}}</h1>
+  <a routerLink="add">Thêm khóa học</a>
     <table class="table table-border">
         <thead>
             <tr>
@@ -17,7 +18,7 @@
                 <td>{{product.Price}}</td>
                 <td><img src="{{product.Image}}" alt=""></td>
                 <td><button class="btn btn-outline-danger" (click)="Remove(product._id)">Xoa</button></td>
-                <td><button class="btn btn-outline-danger" routerLink="{{product._id}}/edit">Sua</button></td>
+                <td><button class="btn btn-outline-primary" routerLink="{{product._id}}/edit">Sua</button></td>
             </tr>
         </tbody>
     </table>
