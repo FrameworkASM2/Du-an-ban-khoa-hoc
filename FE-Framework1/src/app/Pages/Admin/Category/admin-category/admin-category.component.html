@@ -16,7 +16,8 @@
         <td>{{i+1}}</td>
         <td>{{cate.Name}}</td>
         <td>
-          <!-- <button class="btn btn-primary" (click)="Remove(cate._id)">Xóa</button> -->
+          <button class="btn btn-primary" (click)="Remove(cate._id)">Xóa</button>
+          <button class="btn btn-primary" routerLink="edit/{{cate._id}}">Sửa</button>
         </td>
       </tr>
     </tbody>
