@@ -17,9 +17,13 @@ export class AdminCategoryComponent {
     }, error => console.log(error)
     )
   }
-  // Remove(id: any) {
-  //   this.categoryService.removeCategory(id).subscribe(() => {
-  //     this.categories = this.categories.filter(item => item._id != id)
-  //   })
-  // }
+  Remove(id: any) {
+    if (confirm("Bạn chắc chắn có muốn xóa sản phẩm không?")) {
+      this.categoryService.removeCategory(id).subscribe(() => {
+        this.categories = this.categories.filter(item => item._id != id)
+      })
+
+    }
+
+  }
 }
