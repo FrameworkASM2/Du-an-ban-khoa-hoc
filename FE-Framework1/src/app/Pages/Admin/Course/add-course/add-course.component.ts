@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICategory } from 'src/app/Interfaces/Category';
 import { ICourse } from 'src/app/Interfaces/Course';
 import { CategoryService } from 'src/app/Services/Category/category-service.service';
@@ -22,7 +23,8 @@ export class AddCourseComponent {
 
   constructor(
     private courseService: CourseService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private router: Router,
   ) {
     this.categoryService.getCategory().subscribe(data => {
       this.categories = data
@@ -31,9 +33,10 @@ export class AddCourseComponent {
   }
 
   onHandleSubmit() {
-    this.courseService.addCourse(this.course).subscribe(item => {
-      console.log(item);
-      confirm("Them san pham thanh cong")
+    this.courseService.addCourse(this.course).subscribe(() => {
+      // console.log(item);
+      alert("Thên sản phẩm thành công")
+      this.router.navigate(['/admin/course'])
     })
   }
 }

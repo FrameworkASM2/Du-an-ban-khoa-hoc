@@ -16,7 +16,7 @@
                 <td>{{i + 1}}</td>
                 <td>{{product.Name}}</td>
                 <td>{{product.Price}}</td>
-                <td><img src="{{product.Image}}" alt=""></td>
+                <td><img src="{{product.Image}}" alt="" width="100" height="100"></td>
                 <td><button class="btn btn-outline-danger" (click)="Remove(product._id)">Xoa</button></td>
                 <td><button class="btn btn-outline-primary" routerLink="{{product._id}}/edit">Sua</button></td>
             </tr>

@@ -34,19 +34,22 @@ export class UpdateCourseComponent {
 
    
     this.route.paramMap.subscribe(param => {
-      const id = Number(param.get('id'))
+      const id = Number(param.get('_id'))
+      console.log(id);
       this.courseService.getOneCourse(id).subscribe(data => {
         console.log(data);
         this.course = data
-      }, error => console.log(error)
+      }, error => console.log(error.message)
       )
     })
-
   }
 
   onHandleSubmit() {
-    this.courseService.addCourse(this.course).subscribe(item => {
+    this.courseService.updateCourse(this.course).subscribe(item => {
       console.log(item);
+      if(!item){
+        confirm("Cập nhật sản phẩm thất bại")
+      }
       confirm("Cập nhật sản phẩm thành công")
     })
   }
