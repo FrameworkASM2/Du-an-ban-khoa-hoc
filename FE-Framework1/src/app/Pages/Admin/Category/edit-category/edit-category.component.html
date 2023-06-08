@@ -1,1 +1,10 @@
-<p>edit-category works!</p>
+<div class="container">
+    <h1>Sửa danh mục</h1>
+    <form (ngSubmit)=" onHandleSubmit()">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Tên danh mục</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="category.Name" name="Name">
+      </div>
+      <button type="submit" ngClass="btn btn-primary">Sửa</button>
+    </form>
+  </div>
