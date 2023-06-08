@@ -14,12 +14,12 @@ export const getAllProducts = async (req, res) => {
     try {
         // const data = await products.find();
         const { docs, totalDocs, totalPages } = await products.paginate({}, options)
-        if (!data) {
+        if (!docs) {
             return res.status(400).json({
                 message: "Không có sản phẩm nào"
             })
         }
-        return res.status(200).json(data)
+        return res.status(200).json(docs)
     } catch (error) {
         return res.json({
             message: error.message
