@@ -9,12 +9,8 @@ export class CourseService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCourse(_limit: Number = 4, search_key: String = ""): Observable<ICourse[]> {
-    let url = `http://localhost:8080/api/products/?_sort=id&_limit=${_limit}&_order=desc`
-    if(search_key != ""){
-      url += `&name_like=${search_key}`
-    }
-    return this.http.get<ICourse[]>(url)
+  getAllCourse(_limit: Number = 4): Observable<ICourse[]> {
+    return this.http.get<ICourse[]>(`http://localhost:8080/api/products/?_sort=id&_limit=${_limit}&_order=desc`)
   }
   getOneCourse(id: number | string): Observable<ICourse> {
     return this.http.get<ICourse>(`http://localhost:8080/api/products/${id}`)
