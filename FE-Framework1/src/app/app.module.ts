@@ -12,7 +12,9 @@ import { AdminCategoryComponent } from './Pages/Admin/Category/admin-category/ad
 import { AddCategoryComponent } from './Pages/Admin/Category/Add-category/add-category/add-category.component'
 import { AddCourseComponent } from './Pages/Admin/Course/add-course/add-course.component';
 import { UpdateCourseComponent } from './Pages/Admin/Course/update-course/update-course.component';
-import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit-category.component'
+import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit-category.component';
+import { SearchPipe } from './search.pipe';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +26,15 @@ import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit
     AddCategoryComponent,
     AddCourseComponent,
     UpdateCourseComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
