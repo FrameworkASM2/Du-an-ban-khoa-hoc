@@ -14,7 +14,9 @@ import { AddCourseComponent } from './Pages/Admin/Course/add-course/add-course.c
 import { UpdateCourseComponent } from './Pages/Admin/Course/update-course/update-course.component';
 import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit-category.component';
 import { SearchPipe } from './search.pipe';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter'
+import { AboutPageComponent } from './Pages/About-Page/about-page/about-page.component';
+import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +30,14 @@ import { SearchPipe } from './search.pipe';
     UpdateCourseComponent,
     EditCategoryComponent,
     SearchPipe
+    AboutPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    // Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
