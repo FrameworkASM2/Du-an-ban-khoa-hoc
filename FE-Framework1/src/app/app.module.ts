@@ -12,7 +12,9 @@ import { AdminCategoryComponent } from './Pages/Admin/Category/admin-category/ad
 import { AddCategoryComponent } from './Pages/Admin/Category/Add-category/add-category/add-category.component'
 import { AddCourseComponent } from './Pages/Admin/Course/add-course/add-course.component';
 import { UpdateCourseComponent } from './Pages/Admin/Course/update-course/update-course.component';
-import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit-category.component'
+import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit-category.component';
+import { AboutPageComponent } from './Pages/About-Page/about-page/about-page.component';
+import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit
     AddCategoryComponent,
     AddCourseComponent,
     UpdateCourseComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    AboutPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
