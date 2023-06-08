@@ -1,5 +1,6 @@
 import express from "express";
 import { signin, signup } from "../Controllers/user";
+import { checkPermission } from "../Middlewares/CheckPermission";
 
 const router = express.Router();
 

@@ -8,9 +8,17 @@ import { AddCategoryComponent } from "./Pages/Admin/Category/Add-category/add-ca
 import { AddCourseComponent } from './Pages/Admin/Course/add-course/add-course.component';
 import { UpdateCourseComponent } from './Pages/Admin/Course/update-course/update-course.component';
 import { EditCategoryComponent } from "./Pages/Admin/Category/edit-category/edit-category.component";
+import { SignupComponent } from "./Pages/User/Signup/signup/signup.component";
+import { SigninComponent } from "./Pages/User/Signin/signin/signin.component";
 
 
 const routes: Routes = [
+  {
+    path: "signup", component: SignupComponent
+  },
+  {
+    path: "signin", component: SigninComponent
+  },
   {
     path: 'admin', component: AdminLayoutComponent, children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },

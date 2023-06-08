@@ -15,6 +15,9 @@ import { UpdateCourseComponent } from './Pages/Admin/Course/update-course/update
 import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit-category.component';
 import { SearchPipe } from './search.pipe';
 import { AboutPageComponent } from './Pages/About-Page/about-page/about-page.component';
+import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component';
+import { SignupComponent } from './Pages/User/Signup/signup/signup.component';
+import { SigninComponent } from './Pages/User/Signin/signin/signin.component
 import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component'
 
 @NgModule({
@@ -31,7 +34,9 @@ import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-
     EditCategoryComponent,
     SearchPipe,
     AboutPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

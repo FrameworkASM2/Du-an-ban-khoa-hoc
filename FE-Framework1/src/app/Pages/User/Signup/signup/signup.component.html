@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Đăng kí</h1>
+  <form (ngSubmit)="onHandleSubmit()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">UserName</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Name"
+        [(ngModel)]="signup.Name">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email"
+        [(ngModel)]="signup.Email">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="Name" [(ngModel)]="signup.Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Signup</button>
+  </form>
+</div>
