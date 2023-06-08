@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ICourse } from 'src/app/Interfaces/Course';
 import { CourseService } from 'src/app/Services/Course/course.service';
 
@@ -12,7 +12,7 @@ export class CourseComponent {
 
   title = "Quản lí sản phẩm"
   constructor(private courservice: CourseService) {
-    this.courservice.getAllCourse().subscribe(data => {
+    this.courservice.getAllCourse(10).subscribe(data => {
       this.course = data
     },
       error => {
@@ -25,4 +25,7 @@ export class CourseComponent {
       this.course = this.course.filter(item => item._id != id)
     })
   }
+
+  //  ----- Search -------
+  searchValue = ""
 }

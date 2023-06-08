@@ -13,8 +13,10 @@ import { AddCategoryComponent } from './Pages/Admin/Category/Add-category/add-ca
 import { AddCourseComponent } from './Pages/Admin/Course/add-course/add-course.component';
 import { UpdateCourseComponent } from './Pages/Admin/Course/update-course/update-course.component';
 import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit-category.component';
+import { SearchPipe } from './search.pipe';
 import { AboutPageComponent } from './Pages/About-Page/about-page/about-page.component';
 import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-
     AddCourseComponent,
     UpdateCourseComponent,
     EditCategoryComponent,
+    SearchPipe
     AboutPageComponent,
     ContactPageComponent
   ],
@@ -34,7 +37,7 @@ import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

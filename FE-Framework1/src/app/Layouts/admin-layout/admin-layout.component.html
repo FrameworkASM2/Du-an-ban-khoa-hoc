@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="admin-layout.component.css">
-  <title>AdminSite</title>
+  <title>Admin</title>
 </head>
 
 <body>
@@ -65,10 +65,11 @@
     <nav>
       <i class='bx bx-menu toggle-sidebar'></i>
       <form action="#">
-        <div class="form-group">
-          <input type="text" placeholder="Search...">
+        <!-- <div class="form-group">
+          <input type="text" placeholder="Search..." >
+          
           <i class='bx bx-search icon'></i>
-        </div>
+        </div> -->
       </form>
       <a href="#" class="nav-link">
         <i class='bx bxs-bell icon'></i>
@@ -100,7 +101,9 @@
         <li class="divider">/</li>
         <li><a href="#" class="active">Dashboard</a></li>
       </ul>
+      {{valueInput}}
       <router-outlet />
+      
     </main>
     <!-- MAIN -->
   </section>

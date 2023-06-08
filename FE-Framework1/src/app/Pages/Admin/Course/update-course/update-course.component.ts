@@ -34,6 +34,7 @@ export class UpdateCourseComponent {
 
    
     this.route.paramMap.subscribe(param => {
+      // const id = Number(route.snapshot.params.['_id'])
       const id = Number(param.get('_id'))
       console.log(id);
       this.courseService.getOneCourse(id).subscribe(data => {
