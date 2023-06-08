@@ -1,7 +1,13 @@
 <div class="container-admin">
-   <h1>{{title}}</h1>
-  <a routerLink="add">Thêm khóa học</a>
-    <table class="table table-border">
+    <h1>{{title}}</h1>
+    <div class="row p-auto ">
+        <div class="col-3 "><a routerLink="add">Thêm khóa học</a></div>
+        <div class="col-9">
+            <input type="text" placeholder="Search..." [(ngModel)]="searchValue" class="form-control">
+        </div>
+    </div>
+    <hr>
+    <table class="table table-border table-hover table-striped">
         <thead>
             <tr>
                 <th>#</th>
@@ -12,7 +18,7 @@
             </tr>
         </thead>
         <tbody *ngIf="course && course.length">
-            <tr *ngFor="let product of course; index as i">
+            <tr *ngFor="let product of course | search: searchValue; index as i">
                 <td>{{i + 1}}</td>
                 <td>{{product.Name}}</td>
                 <td>{{product.Price}}</td>

@@ -9,8 +9,8 @@ export class CourseService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCourse(): Observable<ICourse[]> {
-    return this.http.get<ICourse[]>(`http://localhost:8080/api/products`)
+  getAllCourse(_limit: Number = 4): Observable<ICourse[]> {
+    return this.http.get<ICourse[]>(`http://localhost:8080/api/products/?_sort=id&_limit=${_limit}&_order=desc`)
   }
   getOneCourse(id: number | string): Observable<ICourse> {
     return this.http.get<ICourse>(`http://localhost:8080/api/products/${id}`)
