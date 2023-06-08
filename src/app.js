@@ -13,6 +13,7 @@ app.use("/api", productRouter)
 app.use("/api", categoryRouter)
 app.use("/api", userRouter)
 
-mongoose.connect(`mongodb://127.0.0.1:27017/framework1`);
+// mongoose.connect(`mongodb://127.0.0.1:27017/framework1`);
+mongoose.connect(`mongodb+srv://Framework1:framework1@course.xa11c8g.mongodb.net/asm2`);
 
 export const viteNodeApp = app;
