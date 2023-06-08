@@ -14,7 +14,9 @@ import { AddCourseComponent } from './Pages/Admin/Course/add-course/add-course.c
 import { UpdateCourseComponent } from './Pages/Admin/Course/update-course/update-course.component';
 import { EditCategoryComponent } from './Pages/Admin/Category/edit-category/edit-category.component';
 import { AboutPageComponent } from './Pages/About-Page/about-page/about-page.component';
-import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component'
+import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component';
+import { SignupComponent } from './Pages/User/Signup/signup/signup.component';
+import { SigninComponent } from './Pages/User/Signin/signin/signin.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-
     UpdateCourseComponent,
     EditCategoryComponent,
     AboutPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
