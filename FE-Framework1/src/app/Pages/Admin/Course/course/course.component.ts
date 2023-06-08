@@ -20,12 +20,13 @@ export class CourseComponent {
       })
   }
   Remove(id: any) {
-    confirm("Bạn có chắc muốn xóa khóa khọc này?")
-    this.courservice.deleteCourse(id).subscribe(() => {
-      this.course = this.course.filter(item => item._id != id)
-    })
-  }
+    if (confirm("Bạn có chắc muốn xóa khóa khọc này?")) {
+      this.courservice.deleteCourse(id).subscribe(() => {
+        this.course = this.course.filter(item => item._id != id)
+      })
+    }
 
+  }
   //  ----- Search -------
   searchValue = ""
 }

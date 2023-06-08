@@ -29,7 +29,7 @@ import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-
     AddCourseComponent,
     UpdateCourseComponent,
     EditCategoryComponent,
-    SearchPipe
+    SearchPipe,
     AboutPageComponent,
     ContactPageComponent
   ],
