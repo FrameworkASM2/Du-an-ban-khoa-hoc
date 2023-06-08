@@ -8,7 +8,7 @@ export const getAllProducts = async (req, res) => {
         page: _page,
         limit: _limit,
         sort: {
-            [req.query._sort]: req.query._order == "desc" ? -1 : 1
+            [req.query._sort]: req.query._order === "desc" ? -1 : 1
         }
     }
     try {
@@ -19,7 +19,7 @@ export const getAllProducts = async (req, res) => {
                 message: "Không có sản phẩm nào"
             })
         }
-        return res.status(200).json(docs)
+        return res.status(200).json(docs, totalDocs, totalPages)
     } catch (error) {
         return res.json({
             message: error.message
@@ -52,7 +52,7 @@ export const createProducts = async (req, res) => {
         const product = await products.create(body)
         await Category.findByIdAndUpdate(product.categoryId, {
             $addToSet: {
-                products: product._id
+                Products: product._id
             }
         })
         if (!product) {

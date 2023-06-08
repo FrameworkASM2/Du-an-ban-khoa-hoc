@@ -20,7 +20,7 @@ export const getAll = async function (req, res) {
 };
 export const get = async (req, res) => {
     try {
-        const category = await Category.findById(req.params.id).getPopulatedPaths("products")
+        const category = await Category.findById(req.params.id).populate("Products")
         if (!category) {
             return res.status(400).json({message: "không có danh mục nào"});
         }

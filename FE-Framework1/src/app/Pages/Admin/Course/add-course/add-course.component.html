@@ -1,5 +1,5 @@
 <div class="container">
-    <form (ngSubmit)="onHandleSubmit()" class="form">
+    <form (ngSubmit)="onHandleSubmit()" >
         <div class="mb-3">
             <label for="">Name</label>
             <input type="text" class="form-control" [(ngModel)]="course.Name" name="Name">
@@ -23,7 +23,7 @@
                 <!-- <option>...</option> -->
             </select>
         </div>
-        {{course | json}}
+        <!-- {{course | json}} -->
         <button class="btn btn-primary">Add Course</button>
     </form>
 </div>

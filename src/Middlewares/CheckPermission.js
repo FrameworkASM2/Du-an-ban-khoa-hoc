@@ -5,6 +5,7 @@ export const checkPermission = async (req, res, next) => {
     try {
         if (!req.headers.authorization) {
             return res.status(400).json({
+                // alert("Bạn chưa đăng nhập"),
                 message: "Bạn chưa đăng nhập"
             })
         }

@@ -8,9 +8,9 @@ import { CourseService } from 'src/app/Services/Course/course.service';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent {
-  course: ICourse[]=[];
-  
-  title= "Quản lí sản phẩm"
+  course: ICourse[] = [];
+
+  title = "Quản lí sản phẩm"
   constructor(private courservice: CourseService) {
     this.courservice.getAllCourse().subscribe(data => {
       this.course = data
@@ -22,7 +22,6 @@ export class CourseComponent {
   Remove(id: any) {
     confirm("Bạn có chắc muốn xóa khóa khọc này?")
     this.courservice.deleteCourse(id).subscribe(() => {
-      
       this.course = this.course.filter(item => item._id != id)
     })
   }
