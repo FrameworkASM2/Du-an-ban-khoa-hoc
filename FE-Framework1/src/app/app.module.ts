@@ -17,8 +17,10 @@ import { SearchPipe } from './search.pipe';
 import { AboutPageComponent } from './Pages/About-Page/about-page/about-page.component';
 import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component';
 import { SignupComponent } from './Pages/User/Signup/signup/signup.component';
-import { SigninComponent } from './Pages/User/Signin/signin/signin.component
-import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component'
+import { SigninComponent } from './Pages/User/Signin/signin/signin.component'
+import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component';
+import { HomePageComponent } from './Client/home-page/home-page.component';
+import { CourseDetailComponent } from './Client/home-page/course-detail/course-detail.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-
     AboutPageComponent,
     ContactPageComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    HomePageComponent,
+    CourseDetailComponent
   ],
   imports: [
     BrowserModule,
