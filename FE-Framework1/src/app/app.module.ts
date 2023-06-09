@@ -21,6 +21,7 @@ import { SigninComponent } from './Pages/User/Signin/signin/signin.component'
 // import { ContactPageComponent } from './Pages/Contact-Page/contact-page/contact-page.component';
 import { HomePageComponent } from './Client/home-page/home-page.component';
 import { CourseDetailComponent } from "./Client/course-detail/course-detail.component";
+import { ListCourseComponent } from './Pages/Course/list-course/list-course.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CourseDetailComponent } from "./Client/course-detail/course-detail.comp
     SignupComponent,
     SigninComponent,
     HomePageComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    ListCourseComponent
   ],
   imports: [
     BrowserModule,
