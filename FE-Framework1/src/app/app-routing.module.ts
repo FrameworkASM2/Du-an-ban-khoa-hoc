@@ -17,7 +17,7 @@ import { CourseDetailComponent } from "./Client/course-detail/course-detail.comp
 const routes: Routes = [
   {
     path:'', component:HomePageComponent, children:[
-      {path: "course/:id", component:CourseDetailComponent}  
+     {path: "course/:id", component: CourseDetailComponent}
       
     ]
   },
