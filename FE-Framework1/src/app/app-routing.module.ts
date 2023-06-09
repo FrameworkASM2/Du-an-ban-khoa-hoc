@@ -12,20 +12,24 @@ import { SignupComponent } from "./Pages/User/Signup/signup/signup.component";
 import { SigninComponent } from "./Pages/User/Signin/signin/signin.component";
 import { HomePageComponent } from "./Client/home-page/home-page.component";
 import { CourseDetailComponent } from "./Client/course-detail/course-detail.component";
+import { ListCourseComponent } from "./Pages/Course/list-course/list-course.component";
+import { BaseLayoutComponent } from "./Layouts/base-layout/base-layout.component";
+import { AboutPageComponent } from "./Pages/About-Page/about-page/about-page.component";
+import { ContactPageComponent } from "./Pages/Contact-Page/contact-page/contact-page.component";
 
 
 const routes: Routes = [
   {
-    path:'', component:HomePageComponent, children:[
-     {path: "course/:id", component: CourseDetailComponent}
-      
+    path: "", component: BaseLayoutComponent, children: [
+      // { path: "", redirectTo: "home", pathMatch: "fussssll" },
+      { path: "home", component: HomePageComponent },
+      { path: "course", component: ListCourseComponent },
+      { path: "course/:id", component: CourseDetailComponent },
+      { path: "about", component: AboutPageComponent },
+      { path: "contact", component: ContactPageComponent }
+
+
     ]
-  },
-  {
-    path: "signup", component: SignupComponent
-  },
-  {
-    path: "signin", component: SigninComponent
   },
   {
     path: 'admin', component: AdminLayoutComponent, children: [
@@ -41,6 +45,12 @@ const routes: Routes = [
       { path: "category/add", component: AddCategoryComponent },
       { path: "category/edit/:id", component: EditCategoryComponent }
     ]
+  },
+  {
+    path: "signup", component: SignupComponent
+  },
+  {
+    path: "signin", component: SigninComponent
   }
 ]
 
