@@ -10,9 +10,15 @@ import { UpdateCourseComponent } from './Pages/Admin/Course/update-course/update
 import { EditCategoryComponent } from "./Pages/Admin/Category/edit-category/edit-category.component";
 import { SignupComponent } from "./Pages/User/Signup/signup/signup.component";
 import { SigninComponent } from "./Pages/User/Signin/signin/signin.component";
+import { HomePageComponent } from "./Client/home-page/home-page.component";
 
 
 const routes: Routes = [
+  {
+    path:'', component:HomePageComponent, children:[
+      
+    ]
+  },
   {
     path: "signup", component: SignupComponent
   },
