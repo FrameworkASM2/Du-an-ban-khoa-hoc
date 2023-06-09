@@ -9,10 +9,12 @@ export const productSchema = joi.object({
     'number.base': 'Vui lòng nhập giá sản phẩm',
     'any.required': 'Vui lòng nhập giá sản phẩm',
   }),
+  Image: joi.required(),
   Description: joi.string().required().messages({
     'string.empty': 'Vui lòng nhập mô tả sản phẩm',
     'any.required': 'Vui lòng nhập mô tả sản phẩm',
   }),
+  categoryId: joi.string().required()
 });
 
 export const categorySchema = joi.object({

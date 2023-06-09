@@ -22,7 +22,12 @@ export class CourseComponent {
   Remove(id: any) {
     if (confirm("Bạn có chắc muốn xóa khóa khọc này?")) {
       this.courservice.deleteCourse(id).subscribe(() => {
-        this.course = this.course.filter(item => item._id != id)
+        // localStorage.setItem('user', JSON.stringify(user))
+        // const currentUserr = JSON.parse(localStorage.getItem('user')!)
+        // if (currentUserr.user.role === "admin") {
+          this.course = this.course.filter(item => item._id != id)
+        // }
+        // this.course = this.course.filter(item => item._id != id)
       })
     }
 

@@ -1,5 +1,10 @@
-<div class="container">
+<h1 style="text-align: center;">Update Course</h1>
+<div class="container border mx-auto mt-5 m p-5" style="width: 500px;">
     <form (ngSubmit)="onHandleSubmit()" class="form">
+        <div class="mb-3">
+            <label for="">Id:</label>
+            <input type="text" disabled class="form-control" [(ngModel)]="course._id" name="_id">
+        </div>
         <div class="mb-3">
             <label for="">Name</label>
             <input type="text" class="form-control" [(ngModel)]="course.Name" name="Name">

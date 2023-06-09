@@ -34,7 +34,7 @@ export const get = async (req, res) => {
 export const create = async (req, res) => {
     try {
         const body = req.body;
-        const { error } = categorySchema.validate(body);
+        const { error } = categorySchema.validate(body, { abortEarly: false });
         if (error) {
             const errors = error.details.map((errorItem) => errorItem.message);
             return res.status(400).json({
@@ -61,6 +61,13 @@ export const update = async (req, res) => {
     try {
         const id = req.params.id;
         const body = req.body;
+        const { error } = categorySchema.validate(body, { abortEarly: false });
+        if (error) {
+            const errors = error.details.map((errorItem) => errorItem.message);
+            return res.status(400).json({
+                message: errors,
+            });
+        }
         const category = await Category.findOneAndUpdate({ _id: id }, body, { new: true });
         if (!category) {
             return res.status(400).json({ message: " Cập nhật danh mục thất bại" });

@@ -30,18 +30,19 @@ export const removeProducts = async (req, res) => {
     try {
         const product = await products.findByIdAndDelete(req.param.id)
         return res.status(200).json({
-            message: "Bạn đã xóa sản phẩm thành công"
+            message: "Bạn đã xóa sản phẩm thành công",
+            product
         })
     } catch (error) {
         return res.status(400).json({
-            message: error.message
+            message: error.message,
         })
     }
 }
 export const createProducts = async (req, res) => {
     try {
         const body = req.body
-        const { error } = productSchema.validate(body)
+        const { error } = productSchema.validate(body,{ abortEarly: false })
         if (error) {
             const errors = error.details.map((errorItem) => errorItem.message)
             return res.status(400).json({
@@ -70,7 +71,7 @@ export const updateProducts = async (req, res) => {
     try {
         const body = req.body
         const id = req.params.id
-        const { error } = productSchema.validate(body)
+        const { error } = productSchema.validate(body,{ abortEarly: false })
         if (error) {
             const errors = error.details.map((errorItem) => errorItem.message)
             return res.status(400).json({

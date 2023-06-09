@@ -1,32 +1,32 @@
 import Jwt from "jsonwebtoken";
-import User from "../Models/User"
+import user from "../Models/User"
 
 export const checkPermission = async (req, res, next) => {
     try {
         if (!req.headers.authorization) {
             return res.status(400).json({
-                // alert("Bạn chưa đăng nhập"),
                 message: "Bạn chưa đăng nhập"
             })
         }
         const token = req.headers.authorization.split(" ")[1];
         Jwt.verify(token, "Ma hop le", async (error, payload) => {
             if (error) {
-                if (error.name == "TokenExpiredError") {
+                if (error.Name == "TokenExpiredError") {
                     return res.json({
                         message: "Token hết hạn"
                     })
                 }
-                if (error.name == "JsonWebTokenError") {
+                if (error.Name == "JsonWebTokenError") {
                     return res.json({
                         message: "Token không hợp lệ"
                     })
                 }
             }
-            const user = await User.findById(payload._id);
-            console.log("user", user);
+            const users = await user.findById(payload._id);
 
-            if (user.role !== "admin") {
+            console.log("user", users);
+
+            if (users.role !== "admin") {
                 return res.status(400).json({
                     message: "Bạn không có quyền truy cập vào tài nguyên này"
                 })
