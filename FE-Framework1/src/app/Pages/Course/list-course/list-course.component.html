@@ -219,10 +219,9 @@
           </div>
         </div>
       </div>
+      <!-- Course -->
       <div class="row courses_row">
-
-        <!-- Course -->
-        <div class="col-lg-4 col-md-6 h-500" *ngFor=" let course of courses">
+        <div class="col-lg-4 col-md-6 h-500" *ngFor=" let course of courses | paginate:{itemsPerPage:3,currentPage:p} ">
           <div class="course ">
             <div class="course_image"><img src="../../../../assets/Images/HomePage/course_8.jpg" alt=""></div>
             <div class="course_body">
@@ -243,106 +242,93 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- Pagination -->
-      <div class="row">
-        <div class="col">
-          <div class="courses_paginations">
-            <ul>
-              <li class="active"><a href="#">01</a></li>
-              <li><a href="#">02</a></li>
-              <li><a href="#">03</a></li>
-              <li><a href="#">04</a></li>
-              <li><a href="#">05</a></li>
-            </ul>
-          </div>
+        <div class="courses_paginations">
+          <ul>
+            <li class="active"> <pagination-controls (pageChange)="p = $event"></pagination-controls></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
+      <!-- Footer -->
 
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
 
-  <!-- Footer -->
-
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-
-        <!-- About -->
-        <div class="col-lg-3 footer_col">
-          <div class="footer_about">
-            <div class="logo_container">
-              <a href="#">
-                <div class="logo_content d-flex flex-row align-items-end justify-content-start">
-                  <div class="logo_img"><img src="images/logo.png" alt=""></div>
-                  <div class="logo_text">learn</div>
+            <!-- About -->
+            <div class="col-lg-3 footer_col">
+              <div class="footer_about">
+                <div class="logo_container">
+                  <a href="#">
+                    <div class="logo_content d-flex flex-row align-items-end justify-content-start">
+                      <div class="logo_img"><img src="images/logo.png" alt=""></div>
+                      <div class="logo_text">learn</div>
+                    </div>
+                  </a>
                 </div>
-              </a>
-            </div>
-            <div class="footer_about_text">
-              <p>Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar.</p>
-            </div>
-            <div class="footer_social">
-              <ul>
-                <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
-              </ul>
-            </div>
-            <div class="copyright">
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 footer_col">
-          <div class="footer_links">
-            <div class="footer_title">Quick menu</div>
-            <ul class="footer_list">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About us</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="#">Facts</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3 footer_col">
-          <div class="footer_links">
-            <div class="footer_title">Useful Links</div>
-            <ul class="footer_list">
-              <li><a href="courses.html">Courses</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="news.html">News</a></li>
-              <li><a href="#">Teachers</a></li>
-              <li><a href="#">Links</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3 footer_col">
-          <div class="footer_contact">
-            <div class="footer_title">Contact Us</div>
-            <div class="footer_contact_info">
-              <div class="footer_contact_item">
-                <div class="footer_contact_title">Address:</div>
-                <div class="footer_contact_line">1481 Creekside Lane Avila Beach, CA 93424</div>
-              </div>
-              <div class="footer_contact_item">
-                <div class="footer_contact_title">Phone:</div>
-                <div class="footer_contact_line">+53 345 7953 32453</div>
-              </div>
-              <div class="footer_contact_item">
-                <div class="footer_contact_title">Email:</div>
-                <div class="footer_contact_line">yourmail@gmail.com</div>
+                <div class="footer_about_text">
+                  <p>Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar.</p>
+                </div>
+                <div class="footer_social">
+                  <ul>
+                    <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                  </ul>
+                </div>
+                <div class="copyright">
+                </div>
               </div>
             </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_links">
+                <div class="footer_title">Quick menu</div>
+                <ul class="footer_list">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="#">Facts</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_links">
+                <div class="footer_title">Useful Links</div>
+                <ul class="footer_list">
+                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="news.html">News</a></li>
+                  <li><a href="#">Teachers</a></li>
+                  <li><a href="#">Links</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_contact">
+                <div class="footer_title">Contact Us</div>
+                <div class="footer_contact_info">
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Address:</div>
+                    <div class="footer_contact_line">1481 Creekside Lane Avila Beach, CA 93424</div>
+                  </div>
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Phone:</div>
+                    <div class="footer_contact_line">+53 345 7953 32453</div>
+                  </div>
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Email:</div>
+                    <div class="footer_contact_line">yourmail@gmail.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
-  </footer>
-</div>

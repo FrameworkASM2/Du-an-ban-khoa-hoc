@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from "@angular/platform-browser";
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Pages/Admin/dashboard/dashboard.component';
 import { AdminLayoutComponent } from './Layouts/admin-layout/admin-layout.component';
@@ -42,13 +43,15 @@ import { ListCourseComponent } from './Pages/Course/list-course/list-course.comp
     SigninComponent,
     HomePageComponent,
     CourseDetailComponent,
-    ListCourseComponent
+    ListCourseComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

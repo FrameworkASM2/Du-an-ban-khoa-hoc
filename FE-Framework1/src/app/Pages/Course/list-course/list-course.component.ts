@@ -9,6 +9,18 @@ import { CourseService } from 'src/app/Services/Course/course.service';
 })
 export class ListCourseComponent {
   courses: ICourse[] = [];
+  p: number = 1
+  // pageSize: number = 10;
+  // page: number = 1;
+  // // totalItems: number;
+  // config: any = {
+  //   id: 'custom-pagination',
+  //   maxSize: 5,
+  //   directionLinks: true,
+  //   autoHide: false
+
+
+  // }
   constructor(private courseService: CourseService) {
     this.courseService.getAllCourse(4).subscribe((course) => {
       this.courses = course
