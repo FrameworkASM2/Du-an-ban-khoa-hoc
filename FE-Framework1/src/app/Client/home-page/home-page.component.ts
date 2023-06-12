@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
   course: ICourse[] = [];
+
   carts: any = []
   title = ""
   constructor(private courservice: CourseService,
@@ -55,6 +56,20 @@ export class HomePageComponent implements OnInit {
       icon: 'success'
     })
     this.router.navigate(["/cart"])
+
+  categories: ICategory[] = [];
+
+  title = ""
+  constructor(
+    private categoryService: CategoryService
+    )
+
+    this.categoryService.getCategory().subscribe(data => {
+      this.categories = data;
+    }, error => {
+      console.log(error);
+    });
+
   }
 
 }
