@@ -48,21 +48,22 @@
           <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#">Offers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" href="#">Products</a>
+          <a class="nav-link mx-2 text-uppercase" routerLink="/course">Courses</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link mx-2 text-uppercase" href="#">Catalog</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" href="#">About</a>
+          <a class="nav-link mx-2 text-uppercase" routerLink="/about">About</a>
         </li>
       </ul>
       <ul class="navbar-nav ms-auto ">
         <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" href="#"><i class="fa-solid fa-cart-shopping me-1"></i> Cart</a>
+          <a class="nav-link mx-2 text-uppercase" routerLink="/cart"><i class="fa-solid fa-cart-shopping me-1"></i>
+            Cart</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mx-2 text-uppercase" href="#"><i class="fa-solid fa-circle-user me-1"></i> Account</a>
@@ -166,7 +167,7 @@
             <div class="card-text">
               $ {{product.Price}}
             </div>
-            <a href="#" class="card-button">Mua khóa học</a>
+            <button class="card-button" (click)="addToCart(product)">Mua khóa học</button>
           </div>
         </div>
       </div>
