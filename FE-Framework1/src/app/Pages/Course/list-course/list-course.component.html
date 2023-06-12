@@ -178,19 +178,24 @@
       <div class="row">
         <div class="col">
           <div class="course_search">
-            <form action="#"
-              class="course_search_form d-flex flex-md-row flex-column align-items-start justify-content-between">
-              <div><input type="text" class="course_input" placeholder="Course" required="required"></div>
-              <div><input type="text" class="course_input" placeholder="Level" required="required"></div>
+            <!-- <form action="#"
+              class="course_search_form d-flex flex-md-row flex-column align-items-start justify-content-between"> -->
+            <div>
+              <input type="text" class="course_input" placeholder="Course" required="required"
+                [(ngModel)]="searchValue">
+            </div>
+            <!-- <div>
+                <input type="text" class="course_input" placeholder="Level" required="required">
+              </div>
               <button class="course_button"><span>search course</span><span class="button_arrow"><i
                     class="fa fa-angle-right" aria-hidden="true"></i></span></button>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
 
       <!-- Featured Course -->
-      <div class="row featured_row">
+      <!-- <div class="row featured_row">
         <div class="col-lg-6 featured_col">
           <div class="featured_content">
             <div class="featured_header d-flex flex-row align-items-center justify-content-start">
@@ -213,15 +218,22 @@
           </div>
         </div>
         <div class="col-lg-6 featured_col">
-          <!-- Background image artist https://unsplash.com/@jtylernix -->
           <div class="featured_background" style="background-image:url(images/featured.jpg)">
             <img src="../../../../assets/Images/HomePage/about_1.jpg" alt="">
           </div>
         </div>
+      </div> -->
+      <nav class="menu_nav">
+        <ul *ngFor=" let cate of categories">
+          <li class="menu_mm"><a routerLink="">{{cate.Name}}</a></li>
+        </ul>
+      </nav>
+      <div class="row courses_row">
+
       </div>
       <!-- Course -->
       <div class="row courses_row">
-        <div class="col-lg-4 col-md-6 h-500" *ngFor=" let course of courses | paginate:{itemsPerPage:3,currentPage:p} ">
+        <div class="col-lg-4 col-md-6 h-500" *ngFor=" let course of courses | paginate:{itemsPerPage:3,currentPage:p} | search: searchValue">
           <div class="course ">
             <div class="course_image"><img src="../../../../assets/Images/HomePage/course_8.jpg" alt=""></div>
             <div class="course_body">
