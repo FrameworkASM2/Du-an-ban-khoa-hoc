@@ -1,0 +1,215 @@
+<!-- Header -->
+<div class="superNav border-bottom py-2 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 centerOnMobile">
+        <select class="me-3 border-0 bg-light">
+          <option value="en-us">EN-US</option>
+        </select>
+        <span
+          class="d-none d-lg-inline-block d-md-inline-block d-sm-inline-block d-xs-none me-3"><strong>info@somedomain.com</strong></span>
+        <span class="me-3"><i class="fa-solid fa-phone me-1 text-warning"></i> <strong>1-800-123-1234</strong></span>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-none d-lg-block d-md-block-d-sm-block d-xs-none text-end">
+        <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted"
+            href="#">Shipping</a></span>
+        <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
+            href="#">Policy</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#"><i class="fa-solid fa-shop me-2"></i> <strong>GEAR SHOP</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="mx-auto my-3 d-lg-none d-sm-block d-xs-block">
+      <div class="input-group">
+        <span class="border-warning input-group-text bg-warning text-white"><i
+            class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" class="form-control border-warning" style="color:#7a7a7a">
+        <button class="btn btn-warning text-white">Search</button>
+      </div>
+    </div>
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="ms-auto d-none d-lg-block">
+        <div class="input-group">
+          <span class="border-warning input-group-text bg-warning text-white"><i
+              class="fa-solid fa-magnifying-glass"></i></span>
+          <input type="text" class="form-control border-warning" style="color:#7a7a7a">
+          <button class="btn btn-warning text-white">Search</button>
+        </div>
+      </div>
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#">Offers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/course">Courses</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" href="#">Catalog</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/about">About</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/cart"><i class="fa-solid fa-cart-shopping me-1"></i>
+            Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" href="#"><i class="fa-solid fa-circle-user me-1"></i> Account</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-caption">
+          <h1 class="page-title">Hike Pageheader</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart -->
+<div *ngIf="carts.length >0">
+  <h1 style="color:red;text-align: center;margin-top: 50px;margin-bottom: 30px;">Giỏ hàng</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Ảnh</th>
+        <th>Tên SP</th>
+        <th>Giá SP</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carts;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{cart.Image}}</td>
+        <td>{{cart.name}}</td>
+        <td>{{cart.price}}</td>
+        <td>
+          {{cart.quantity}}
+          <!-- <input (change)="updateQuantity(i,$event)" type="number" [value]="cart.quantity"
+            style="width:60px;text-align: center;" /> -->
+        </td>
+        <td>{{ subtotal(cart)}}</td>
+        <td>
+          <i class=" fa-solid fa-trash-can" (click)="removeItem(cart)"></i>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+<div *ngIf="carts.length ===0">
+  <h2 style="color:red;text-align: center;margin-top: 50px;margin-bottom: 50px;">Giỏ hàng trống</h2>
+</div>
+<div class="text-center">
+  <a routerLink="/" class="btn btn-sm btn-primary"
+    style="margin-bottom: 50px;height:40px;font-size:20px;color:#fff">Tiếp tục mua
+    hàng</a>
+  <button style="margin-bottom: 50px;margin-left: 40px;" class="btn btn-sm btn-danger" (click)="clearCart()">Xóa tất
+    cả</button>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+
+      <!-- About -->
+      <div class="col-lg-3 footer_col">
+        <div class="footer_about">
+          <div class="logo_container">
+            <a href="#">
+              <div class="logo_content d-flex flex-row align-items-end justify-content-start">
+                <div class="logo_img"><img src="images/logo.png" alt=""></div>
+                <!-- <div class="logo_text">learn</div> -->
+              </div>
+            </a>
+          </div>
+          <div class="footer_about_text">
+            <p>Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar.</p>
+          </div>
+          <div class="footer_social">
+            <ul>
+              <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 footer_col">
+        <div class="footer_links">
+          <div class="footer_title">Quick menu</div>
+          <ul class="footer_list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Facts</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 footer_col">
+        <div class="footer_links">
+          <div class="footer_title">Useful Links</div>
+          <ul class="footer_list">
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="#">Teachers</a></li>
+            <li><a href="#">Links</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 footer_col">
+        <div class="footer_contact">
+          <div class="footer_title">Contact Us</div>
+          <div class="footer_contact_info">
+            <div class="footer_contact_item">
+              <div class="footer_contact_title">Address:</div>
+              <div class="footer_contact_line">150 Cầu Giấy-Hà Nội</div>
+            </div>
+            <div class="footer_contact_item">
+              <div class="footer_contact_title">Phone:</div>
+              <div class="footer_contact_line">19001568</div>
+            </div>
+            <div class="footer_contact_item">
+              <div class="footer_contact_title">Email:</div>
+              <div class="footer_contact_line">cskh@unica.vn</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

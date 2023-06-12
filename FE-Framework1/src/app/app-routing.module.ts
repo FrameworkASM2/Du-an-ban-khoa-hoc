@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core"
+import { Component, NgModule } from "@angular/core"
 import { RouterModule, Routes } from "@angular/router"
 import { AdminLayoutComponent } from './Layouts/admin-layout/admin-layout.component';
 import { DashboardComponent } from './Pages/Admin/dashboard/dashboard.component';
@@ -16,6 +16,7 @@ import { ListCourseComponent } from "./Pages/Course/list-course/list-course.comp
 import { BaseLayoutComponent } from "./Layouts/base-layout/base-layout.component";
 import { AboutPageComponent } from "./Pages/About-Page/about-page/about-page.component";
 import { ContactPageComponent } from "./Pages/Contact-Page/contact-page/contact-page.component";
+import { CartComponent } from "./Pages/Cart/cart/cart.component";
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
       { path: "course", component: ListCourseComponent },
       { path: "course/:id", component: CourseDetailComponent },
       { path: "about", component: AboutPageComponent },
-      { path: "contact", component: ContactPageComponent }
+      { path: "contact", component: ContactPageComponent },
+      { path: "cart", component: CartComponent }
 
 
     ]
@@ -45,8 +47,8 @@ const routes: Routes = [
       { path: "category/edit/:id", component: EditCategoryComponent }
     ]
   },
-  {path: "signup", component: SignupComponent},
-  {path: "signin", component: SigninComponent}
+  { path: "signup", component: SignupComponent },
+  { path: "signin", component: SigninComponent }
 ]
 
 @NgModule({

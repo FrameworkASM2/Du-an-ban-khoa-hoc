@@ -15,5 +15,8 @@ export class UserService {
   signin(user: IUser): Observable<IUser> {
     return this.http.post<IUser>(`http://localhost:8080/api/signin`, user)
   }
+  getAcount(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(`http://localhost:8080/api/signin`)
+  }
 
 }

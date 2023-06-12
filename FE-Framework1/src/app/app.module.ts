@@ -23,6 +23,7 @@ import { SigninComponent } from './Pages/User/Signin/signin/signin.component'
 import { HomePageComponent } from './Client/home-page/home-page.component';
 import { CourseDetailComponent } from "./Client/course-detail/course-detail.component";
 import { ListCourseComponent } from './Pages/Course/list-course/list-course.component';
+import { CartComponent } from './Pages/Cart/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ListCourseComponent } from './Pages/Course/list-course/list-course.comp
     CourseDetailComponent,
     ListCourseComponent,
 
+    CartComponent
   ],
   imports: [
     BrowserModule,
