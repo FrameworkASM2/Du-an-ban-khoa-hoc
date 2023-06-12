@@ -16,6 +16,11 @@ export class SigninComponent {
   constructor(private signinService: UserService,
     private router: Router) { }
   onHandleSubmit() {
+    if (!this.signin.Email || !this.signin.Password) {
+      // Hiển thị thông báo lỗi nếu Email hoặc Password không được nhập
+      alert("Vui lòng nhập Email và Password.")
+      return;
+    }    
     this.signinService.signin(this.signin).subscribe((user) => {
       //Lưu trữ thông tin vào LocalStỏage
       localStorage.setItem('user', JSON.stringify(user))
