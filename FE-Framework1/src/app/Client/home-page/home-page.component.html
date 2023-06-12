@@ -46,7 +46,7 @@
             Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" href="#"><i class="fa-solid fa-circle-user me-1"></i> Account</a>
+          <a class="nav-link mx-2 text-uppercase" routerLink="/signup"><i class="fa-solid fa-circle-user me-1"></i> Account</a>
         </li>
       </ul>
     </div>
@@ -105,7 +105,8 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <!-- section-title -->
           <div class="section-title mb-0 mota">
-            <h2 class="mota">Học tiếng Anh trực tuyến và nâng cao kỹ năng của bạn thông qua các khóa học và tài nguyên chất lượng cao của chúng tôi.</h2>
+            <h2 class="mota">Học tiếng Anh trực tuyến và nâng cao kỹ năng của bạn thông qua các khóa học và tài nguyên
+              chất lượng cao của chúng tôi.</h2>
             <p>Conversational English: Engage in Natural and Meaningful Conversations </p>
             <p>English for Academic Excellence: Enhancing Language Skills for Academic Success </p>
           </div>
@@ -129,10 +130,10 @@
       </ul>
     </div>
     <div class="product col-9">
-      <h2></h2>
-      <div class="row">
+      <!-- <h2></h2> -->
+      <div class="row" >
         <div class="col col-md-3" *ngFor="let product of course">
-          <a class="card-sl" routerLink="course/{{product._id}}" >
+          <a class="card-sl" routerLink="course/{{product._id}}"></a>
             <div class="card-image">
               <img src="{{product.Image}}" />
             </div>
@@ -149,16 +150,12 @@
             </div>
 
             <button class="card-button" (click)="addToCart(product)">Mua khóa học</button>
-          </div>
-
-            <a href="#" class="card-button">Thêm khóa học</a>
-          </a>
-
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- Footer -->
 <!-- Footer -->

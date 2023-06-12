@@ -17,6 +17,7 @@ import { BaseLayoutComponent } from "./Layouts/base-layout/base-layout.component
 import { AboutPageComponent } from "./Pages/About-Page/about-page/about-page.component";
 import { ContactPageComponent } from "./Pages/Contact-Page/contact-page/contact-page.component";
 import { CartComponent } from "./Pages/Cart/cart/cart.component";
+// import { HomePageComponent } from "./Pages/home-page/home-page.component";
 
 
 const routes: Routes = [

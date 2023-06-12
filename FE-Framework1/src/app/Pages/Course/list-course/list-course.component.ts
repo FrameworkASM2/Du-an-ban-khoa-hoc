@@ -14,12 +14,13 @@ export class ListCourseComponent {
   courses: ICourse[] = [];
   categories: ICategory[] = []
   // catId: any;
+  p: number = 1
   constructor(
     private courseService: CourseService,
     private categoryService: CategoryService,
     private route: ActivatedRoute,
   ) {
-  p: number = 1
+ 
   // pageSize: number = 10;
   // page: number = 1;
   // // totalItems: number;

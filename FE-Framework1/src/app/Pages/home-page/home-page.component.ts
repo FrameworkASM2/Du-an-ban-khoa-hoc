@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
 import { ICategory } from 'src/app/Interfaces/Category';
 import { ICourse } from 'src/app/Interfaces/Course';
 import { CategoryService } from 'src/app/Services/Category/category-service.service';
@@ -13,11 +14,14 @@ import { Router } from '@angular/router';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
+
 export class HomePageComponent implements OnInit {
   course: ICourse[] = [];
   categories: ICategory[] = [];
   carts: any = []
   title = ""
+  searchValue = ""
+
   constructor(private courservice: CourseService,
     private cartService: CartService,
     private router: Router,
@@ -25,14 +29,20 @@ export class HomePageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.carts = this.cartService.getCart()
+    
     this.categoryService.getCategory().subscribe(data => {
-      this.categories = data})
-    this.courservice.getAllCourse(10).subscribe(data => {
-      this.course = data
+      this.categories = data
     },
       error => {
         console.log(error);
-      })
+      }),
+
+      this.courservice.getAllCourse(10).subscribe(data => {
+        this.course = data
+      },
+        error => {
+          console.log(error);
+        })
 
   }
   addToCart(course: ICourse) {
@@ -67,5 +77,4 @@ export class HomePageComponent implements OnInit {
     // });
 
   }
-
 }

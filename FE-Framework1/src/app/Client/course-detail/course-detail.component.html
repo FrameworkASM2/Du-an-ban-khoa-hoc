@@ -57,9 +57,9 @@
             <h2 class="name">{{product.Name}}</h2>
             <p id="money">${{product.Price}}</p>
             <p id="Pellentesque">{{product.Description}}</p>
-            <a href="">
-                <button>Add To Course</button>
-            </a>
+            <!-- <a href=""> -->
+                <button (click)="addToCart(product)">Add To Course</button>
+            <!-- </a> -->
         </div>
         <div class="img">
             <img src="{{product.Image}}" alt="">

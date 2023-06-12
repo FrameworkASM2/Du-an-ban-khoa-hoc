@@ -28,7 +28,7 @@ export const getAllProducts = async (req, res) => {
 }
 export const removeProducts = async (req, res) => {
     try {
-        const product = await products.findByIdAndDelete(req.param.id)
+        const product = await products.findByIdAndDelete(req.params.id)
         return res.status(200).json({
             message: "Bạn đã xóa sản phẩm thành công",
             product

@@ -51,7 +51,7 @@
               </div>
               <nav class="main_nav_contaner ml-auto">
                 <ul class="main_nav">
-                  <li><a routerLink="/home">home</a></li>
+                  <li><a routerLink="/">home</a></li>
                   <!-- <li><a href="about.html">about us</a></li> -->
                   <li class="active"><a routerLink="course">courses</a></li>
                   <li><a routerLink="/about">About</a></li>
@@ -223,11 +223,11 @@
           </div>
         </div>
       </div> -->
-      <nav class="menu_nav">
+      <!-- <nav class="menu_nav">
         <ul *ngFor=" let cate of categories">
           <li class="menu_mm"><a routerLink="">{{cate.Name}}</a></li>
         </ul>
-      </nav>
+      </nav> -->
       <div class="row courses_row">
 
       </div>
@@ -235,14 +235,14 @@
       <div class="row courses_row">
         <div class="col-lg-4 col-md-6 h-500" *ngFor=" let course of courses | paginate:{itemsPerPage:3,currentPage:p} | search: searchValue">
           <div class="course ">
-            <div class="course_image"><img src="../../../../assets/Images/HomePage/course_8.jpg" alt=""></div>
+            <div class="course_image"><img src="{{course.Image}}" alt=""></div>
             <div class="course_body">
               <div class="course_header d-flex flex-row align-items-center justify-content-start">
-                <div class=" course_tag"><a href="#">Featured</a></div>
+                <div class=" course_tag"><a routerLink="#">Featured</a></div>
                 <div class="course_price ml-auto">Price: <span>${{course.Price}}</span></div>
               </div>
               <div class="course_title">
-                <h3><a href="courses.html">{{course.Name}}</a></h3>
+                <h3><a routerLink="/course/{{course._id}}">{{course.Name}}</a></h3>
               </div>
               <div class="course_text">{{course.Description}}</div>
               <div class="course_footer d-flex align-items-center justify-content-start">

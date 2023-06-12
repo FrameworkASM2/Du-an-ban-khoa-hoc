@@ -9,7 +9,7 @@ import { CourseService } from 'src/app/Services/Course/course.service';
 })
 export class CourseComponent {
   course: ICourse[] = [];
-
+  p: number = 1
   title = "Quản lí sản phẩm"
   constructor(private courservice: CourseService) {
     this.courservice.getAllCourse(10).subscribe(data => {
@@ -20,9 +20,9 @@ export class CourseComponent {
       })
   }
   Remove(id: any) {
-    if (confirm("Bạn có chắc muốn xóa khóa khọc này?")) {
+    if (confirm("Bạn có chắc muốn xóa khóa học này?")) {
       this.courservice.deleteCourse(id).subscribe(() => {
-          this.course = this.course.filter(item => item._id != id)
+          this.course = this.course.filter(item => item._id !== id)
       })
     }
 

@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody *ngIf="course && course.length">
-            <tr *ngFor="let product of course | search: searchValue; index as i">
+            <tr *ngFor="let product of course | search: searchValue | paginate:{itemsPerPage:3,currentPage:p}; index as i">
                 <td>{{i + 1}}</td>
                 <td>{{product.Name}}</td>
                 <td>{{product.Price}}</td>
@@ -28,4 +28,9 @@
             </tr>
         </tbody>
     </table>
+    <div class="courses_paginations">
+        <ul>
+          <li class="active"> <pagination-controls (pageChange)="p = $event"></pagination-controls></li>
+        </ul>
+      </div>
 </div>
