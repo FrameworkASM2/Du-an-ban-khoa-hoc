@@ -11,15 +11,24 @@ import { CourseService } from 'src/app/Services/Course/course.service';
 })
 export class HomePageComponent {
   course: ICourse[] = [];
+  categories: ICategory[] = [];
 
   title = ""
-  constructor(private courservice: CourseService) {
-    this.courservice.getAllCourse(10).subscribe(data => {
-      this.course = data
-    },
-      error => {
-        console.log(error);
-      })
+  constructor(
+    private courseService: CourseService, 
+    private categoryService: CategoryService
+    ){
+    this.courseService.getAllCourse(10).subscribe(data => {
+      this.course = data;
+    }, error => {
+      console.log(error);
+    });
+
+    this.categoryService.getCategory().subscribe(data => {
+      this.categories = data;
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

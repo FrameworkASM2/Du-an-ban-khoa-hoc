@@ -1,26 +1,6 @@
-<div class="superNav border-bottom py-2 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 centerOnMobile">
-        <select class="me-3 border-0 bg-light">
-          <option value="en-us">EN-US</option>
-        </select>
-        <span
-          class="d-none d-lg-inline-block d-md-inline-block d-sm-inline-block d-xs-none me-3"><strong>info@somedomain.com</strong></span>
-        <span class="me-3"><i class="fa-solid fa-phone me-1 text-warning"></i> <strong>1-800-123-1234</strong></span>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-none d-lg-block d-md-block-d-sm-block d-xs-none text-end">
-        <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted"
-            href="#">Shipping</a></span>
-        <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
-            href="#">Policy</a></span>
-      </div>
-    </div>
-  </div>
-</div>
 <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#"><i class="fa-solid fa-shop me-2"></i> <strong>GEAR SHOP</strong></a>
+    <a class="navbar-brand" href="#"><i class="fa-solid fa-shop me-2"></i> <strong>MY COURSE</strong></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -109,7 +89,7 @@
     <div class="row">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="page-caption">
-          <h1 class="page-title">Hike Pageheader</h1>
+          <h1 class="page-title">Học tiếng Anh trực tuyến và nâng cao kỹ năng của bạn</h1>
         </div>
       </div>
     </div>
@@ -124,7 +104,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <!-- section-title -->
           <div class="section-title mb-0 mota">
-            <h2 class="mota">Essential English: Building Strong Language Foundations for Success</h2>
+            <h2 class="mota">Học tiếng Anh trực tuyến và nâng cao kỹ năng của bạn thông qua các khóa học và tài nguyên chất lượng cao của chúng tôi.</h2>
             <p>Conversational English: Engage in Natural and Meaningful Conversations </p>
             <p>English for Academic Excellence: Enhancing Language Skills for Academic Success </p>
           </div>
@@ -140,18 +120,18 @@
   <div class="row">
     <div class="category col-3">
       <h2 class="categories">Các khóa học</h2>
-      <ul class="list-group">
-        <li class="list-group-item"><a href="">Khóa học 1</a></li>
-        <li class="list-group-item"><a href="">Khóa học 1</a></li>
-        <li class="list-group-item"><a href="">Khóa học 1</a></li>
+      <ul class="list-group" *ngFor="let category of categories">
+        <li class="list-group-item"><a href="">{{category.Name}}</a></li>
+        <!-- <li class="list-group-item"><a href="">Khóa học 1</a></li>
+        <li class="list-group-item"><a href="">Khóa học 1</a></li> -->
 
       </ul>
     </div>
     <div class="product col-9">
       <h2></h2>
       <div class="row">
-        <div class="col col-md-3">
-          <div class="card-sl" *ngFor="let product of course">
+        <div class="col col-md-3" *ngFor="let product of course">
+          <a class="card-sl" routerLink="course/{{product._id}}" >
             <div class="card-image">
               <img src="{{product.Image}}" />
             </div>
@@ -166,8 +146,8 @@
             <div class="card-text">
               $ {{product.Price}}
             </div>
-            <a href="#" class="card-button">Mua khóa học</a>
-          </div>
+            <a href="#" class="card-button">Thêm khóa học</a>
+          </a>
         </div>
       </div>
     </div>
