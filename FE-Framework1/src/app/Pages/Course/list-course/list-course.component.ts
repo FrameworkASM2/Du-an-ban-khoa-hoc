@@ -19,6 +19,17 @@ export class ListCourseComponent {
     private categoryService: CategoryService,
     private route: ActivatedRoute,
   ) {
+  p: number = 1
+  // pageSize: number = 10;
+  // page: number = 1;
+  // // totalItems: number;
+  // config: any = {
+  //   id: 'custom-pagination',
+  //   maxSize: 5,
+  //   directionLinks: true,
+  //   autoHide: false
+
+
     this.courseService.getAllCourse(4).subscribe((course) => {
       this.courses = course
     },
