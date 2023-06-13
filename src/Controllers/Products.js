@@ -71,13 +71,13 @@ export const updateProducts = async (req, res) => {
     try {
         const body = req.body
         const id = req.params.id
-        const { error } = productSchema.validate(body,{ abortEarly: false })
-        if (error) {
-            const errors = error.details.map((errorItem) => errorItem.message)
-            return res.status(400).json({
-                message: errors
-            })
-        }
+        // const { error } = productSchema.validate(body,{ abortEarly: false })
+        // if (error) {
+        //     const errors = error.details.map((errorItem) => errorItem.message)
+        //     return res.status(400).json({
+        //         message: errors
+        //     })
+        // }
         const product = await products.findOneAndUpdate({ _id: id }, body, { new: true })
         if (!product) {
             return res.status(400).json({

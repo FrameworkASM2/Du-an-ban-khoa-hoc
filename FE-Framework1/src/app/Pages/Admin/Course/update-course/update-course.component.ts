@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ICategory } from 'src/app/Interfaces/Category';
 import { ICourse } from 'src/app/Interfaces/Course';
 import { CategoryService } from 'src/app/Services/Category/category-service.service';
@@ -25,6 +25,7 @@ export class UpdateCourseComponent {
     private courseService: CourseService,
     private categoryService: CategoryService,
     private route: ActivatedRoute,
+    private routerNavigate: Router
   ) {
 
     this.categoryService.getCategory().subscribe(data => {
@@ -32,26 +33,21 @@ export class UpdateCourseComponent {
     }, error => console.log(error)
     )
 
-   
-    this.route.paramMap.subscribe(param => {
-      // const id = Number(route.snapshot.params.['_id'])
-      const id = Number(param.get('_id'))
-      console.log(id);
-      this.courseService.getOneCourse(id).subscribe(data => {
-        console.log(data);
-        this.course = data
-      }, error => console.log(error.message)
-      )
+    this.route.paramMap.subscribe(params => {
+      const id = String(params.get('id'))
+      this.courseService.getOneCourse(id).subscribe(data => this.course = data)
     })
   }
 
   onHandleSubmit() {
     this.courseService.updateCourse(this.course).subscribe(item => {
       console.log(item);
-      if(!item){
+      if (!item) {
         confirm("Cập nhật sản phẩm thất bại")
+      } else {
+        confirm("Cập nhật sản phẩm thành công")
+        // this.routerNavigate.nagigate(['/admin/course'])
       }
-      confirm("Cập nhật sản phẩm thành công")
     })
   }
 }

@@ -17,8 +17,12 @@ export class EditCategoryComponent {
     private categoryService: CategoryService,
     private route: ActivatedRoute
   ){
+    // this.route.paramMap.subscribe(params => {
+    //   const id = String(params.get('id'))
+    //   this.categoryService.getcategoryById(id).subscribe(data => this.category = data)
+    // })
     this.route.paramMap.subscribe(param =>{
-      const id = Number(param.get('_id'));
+      const id = String(param.get('id'));
       this.categoryService.getcategoryById(id).subscribe(category => {
         this.category = category;
       }, error => console.log(error.message))
